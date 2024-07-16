@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Question Detail</title>
+</head>
+<body>
+    <h1>Question Detail</h1>
+    <div>
+        <strong>Question:</strong>
+        <p th:text="${question.content}">Question Content</p>
+    </div>
+    <div>
+        <strong>Image URL:</strong>
+        <p th:text="${question.image}">Image URL</p>
+    </div>
+    <div>
+        <strong>Option 1:</strong>
+        <p th:text="${question.option1}">Option 1</p>
+    </div>
+    <div>
+        <strong>Option 2:</strong>
+        <p th:text="${question.option2}">Option 2</p>
+    </div>
+    <div>
+        <strong>Option 3:</strong>
+        <p th:text="${question.option3}">Option 3</p>
+    </div>
+    <div>
+        <strong>Option 4:</strong>
+        <p th:text="${question.option4}">Option 4</p>
+    </div>
+    <div>
+        <strong>Answer:</strong>
+        <p th:text="${question.answer}">Answer</p>
+    </div>
+    <a th:href="@{/questions/edit/{id}(id=${question.quesId})}">Edit</a>
+    <a href="/questions">Back to List</a>
+</body>
+</html>

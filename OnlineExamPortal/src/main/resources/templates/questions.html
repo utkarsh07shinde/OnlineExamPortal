@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Questions</title>
+</head>
+<body>
+    <h1>Questions</h1>
+    <ul>
+        <li th:each="question : ${questions}">
+            <div>
+                <strong>Question:</strong>
+                <span th:text="${question.content}">Question Content</span>
+            </div>
+            <div>
+                <strong>Options:</strong>
+                <ul>
+                    <li th:text="'Option 1: ' + ${question.option1}">Option 1</li>
+                    <li th:text="'Option 2: ' + ${question.option2}">Option 2</li>
+                    <li th:text="'Option 3: ' + ${question.option3}">Option 3</li>
+                    <li th:text="'Option 4: ' + ${question.option4}">Option 4</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Answer:</strong>
+                <span th:text="${question.answer}">Answer</span>
+            </div>
+            <div>
+                <a th:href="@{/questions/edit/{id}(id=${question.quesId})}">Edit</a>
+                <a th:href="@{/questions/delete/{id}(id=${question.quesId})}">Delete</a>
+            </div>
+        </li>
+    </ul>
+    <a href="/questions/add">Add New Question</a>
+</body>
+</html>
